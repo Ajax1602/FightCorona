@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+  {% include 'header/header.html' %}
+
+</head>
+<body>
+<!-- Search Services -->
+<form class="form-inline" style="padding: 10px;">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search Service" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
+
+{% include 'services/services.html' %}
+
+<br/>
+<br/>
+<!-- Search Sub-Services -->
+<form class="form-inline" style="padding: 10px;">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search Sub-Service" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
+
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Launch
+    Modal Contact Form</a>
+</div>
+{% include 'requests/requestform.html' %}
+
+{% include 'subservices/subservices.html' %}
+
+</body>
+
+
+
+
+<script src='{% static "js/jQuery.js" %}'></script>
+<script src='{% static "js/bootstrap/bootstrap.bundle.min.js" %}'></script>
+<script src='{% static "js/nestedlist.js" %}'></script>
+
+
+</html>
