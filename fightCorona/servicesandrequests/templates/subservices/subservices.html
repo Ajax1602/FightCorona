@@ -1,31 +1,26 @@
-<div class="container-fluid">
-  <div class="col-sm-12 col-md-12 col-sm-12 col-lg-12">
-    <ul class="list-group list-group-collapse">
-    <li class="list-group-item">One<a href="#" data-toggle="#filterList1" class="list-down-btn"><span class="fa fa-chevron-down"></span></a>
-        <ul class="list-group filterList" id="filterList1">
-
-        {% include 'requests/requests.html' %}
-
-
-        </ul>
-      </li>
-        <li class="list-group-item">Two<a href="#" data-toggle="#filterList2" class="list-down-btn"><span class="fa fa-chevron-down"></span></a>
+<ul class="list-group list-group-collapse">
+{% if subservices.count > 0 %}
+    {% for subservice in subservices %}
+       {% include 'subservices/subserviceslice.html' with subservice_name=subservice.sub_service_name subserviceid=subservice.sub_service_id %}
+    {% endfor %}
+{% else %}
+    NOT FOUND
+{% endif %}
+    <!--<li class="list-group-item">Two<a href="#" data-toggle="#filterList2" class="list-down-btn"><span
+            class="fa fa-chevron-down"></span></a>
         <ul class="list-group filterList" id="filterList2">
-          <li class="list-group-item">
-            Subgroup
-          </li>
             <li class="list-group-item">
-            Subgroup
-          </li>
+                Subgroup
+            </li>
             <li class="list-group-item">
-            Subgroup
-          </li>
+                Subgroup
+            </li>
+            <li class="list-group-item">
+                Subgroup
+            </li>
         </ul>
-      </li>
-    </ul>
-  </div>
-
-</div>
+    </li>-->
+</ul>
 
 
 <script>
@@ -74,5 +69,7 @@
 {
   display: none;
 }
+
+
 </style>
 

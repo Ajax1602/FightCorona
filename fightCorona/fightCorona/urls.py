@@ -27,7 +27,10 @@ urlpatterns = [
     path('test', views.test, name='test'),
     path('requestform', views.requestform, name='requestform'),
     path('requestdetail', views.requestdetail, name='requestdetail'),
-    path('requestformnew', request_create_view)
+    path('requestformnew', request_create_view),
+    path('searchservice', views.searchservice, name='searchservice'),
+    path('searchsubservice', views.searchsubservice, name='searchsubservice'),
+    path('searchrequest', views.searchrequest, name='searchrequest')
 ]
 
 if settings.DEBUG:

@@ -11,22 +11,25 @@
 </head>
 <body>
 <!-- Search Services -->
-<form class="form-inline" style="padding: 10px;">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search Service" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+<form id="searchservice" class="form-inline" style="padding: 10px;">
+    <input id="service_search_input" class="form-control mr-sm-2" type="search" placeholder="Search Service" aria-label="Search">
+    <button type="button" id="service-search-button" class="btn btn-outline-success my-2 my-sm-0">Search</button>
   </form>
 
+<div id="service_block" class="service">
 
-{% include 'services/services.html' %}
+</div>
 
 <br/>
 <br/>
 <!-- Search Sub-Services -->
-<form class="form-inline" style="padding: 10px;">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search Sub-Service" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
+<form id="searchsubservice" class="form-inline" style="padding: 10px;">
+    <input id="subservice_search_input" class="form-control mr-sm-2" type="search" placeholder="Search Sub-Service" aria-label="Search">
+    <button type="button" id="subservice-search-button" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+</form>
+<div id="subservice_block" class="service">
 
+</div>
 
 <div class="text-center">
   <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Launch
@@ -34,7 +37,11 @@
 </div>
 {% include 'requests/requestform.html' %}
 
+<div class="container-fluid">
+    <div class="col-sm-12 col-md-12 col-sm-12 col-lg-12">
 {% include 'subservices/subservices.html' %}
+    </div>
+</div>
 
 </body>
 

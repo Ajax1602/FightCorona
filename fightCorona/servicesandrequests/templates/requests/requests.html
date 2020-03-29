@@ -1,13 +1,20 @@
-<a class="request list-group-item" href="" class="btn btn-default btn-rounded mb-4 waves-effect waves-light" data-toggle="modal" data-target="#requestDescription">
+<a class="request list-group-item" href="" class="btn btn-default btn-rounded mb-4 waves-effect waves-light"
+   data-toggle="modal" data-target="#requestDescription">
     Subgroup
 </a>
-<li class="request list-group-item">
-    Subgroup
-</li>
-<li class="request list-group-item">
-    Subgroup3
-</li>
 
+{% if requests.count > 0 %}
+    {% for request in requests %}
+    <li class="request list-group-item">
+        {{request.request_name}}
+    </li>
+    {% endfor %}
+{% else %}
+    NOT FOUND
+{% endif %}
 
+<!--
 {% include 'requests/requestform.html' %}
 {% include 'requests/requestdetails.html' %}
+
+-->

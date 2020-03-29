@@ -1,9 +1,10 @@
-<div class="service">
-    {% include 'services/card.html' with ima_src="Ajay" service_name="Yo" %}
-    {% include 'services/card.html'  with person="Jane" greeting="Hello" %}
-    {% include 'services/card.html'  with person="Jane" greeting="Hello" %}
-    {% include 'services/card.html'  with person="Jane" greeting="Hello" %}
-    {% include 'services/card.html'  with person="Jane" greeting="Hello" %}
-    {% include 'services/card.html'  with person="Jane" greeting="Hello" %}
 
-</div>
+
+    {% if services.count > 0 %}
+        {% for service in services %}
+            {% include 'services/card.html' with img_src=service.service_pic service_name=service.service_name %}
+        {% endfor %}
+    {% else %}
+        NOT FOUND
+    {% endif %}
+
